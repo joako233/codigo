@@ -16,7 +16,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: pip install -r codigo/requirements.txt
+      run: pip install -r requirements.txt
 
     - name: Install PyInstaller
       run: pip install pyinstaller
