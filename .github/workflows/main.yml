@@ -23,10 +23,10 @@ jobs:
 
     - name: Build Executable
       run: |
-        pyinstaller --onefile --name=MyApp victor_fiver.py
+        pyinstaller --onefile --name=VictorCODE victor_fiver.py
 
     - name: Upload Executable
       uses: actions/upload-artifact@v2
       with:
-        name: MyApp
-        path: dist/MyApp
+        name: VictorCODE
+        path: dist/VictorCODE
