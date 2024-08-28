@@ -1,0 +1,32 @@
+name: Build Mac Executable
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install -r codigo/requirements.txt
+
+    - name: Install PyInstaller
+      run: pip install pyinstaller
+
+    - name: Build Executable
+      run: |
+        pyinstaller --onefile --name=MyApp codigo/victor_fiver.py
+
+    - name: Upload Executable
+      uses: actions/upload-artifact@v2
+      with:
+        name: MyApp
+        path: dist/MyApp
