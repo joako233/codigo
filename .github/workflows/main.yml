@@ -23,7 +23,7 @@ jobs:
 
     - name: Build Executable
       run: |
-        pyinstaller --onefile --name=MyApp codigo/victor_fiver.py
+        pyinstaller --onefile --name=MyApp victor_fiver.py
 
     - name: Upload Executable
       uses: actions/upload-artifact@v2
